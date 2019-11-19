@@ -6,6 +6,7 @@ class intro_2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      //backgroundColor: Color.fromARGB(255, 203, 236, 241),
       appBar: AppBar(
         title: Text(
           "How To Tree",
@@ -18,76 +19,72 @@ class intro_2 extends StatelessWidget {
 }
 
 _body(context) {
-  return Column(
-    mainAxisAlignment: MainAxisAlignment.center,
-    children: <Widget>[
-      _titulo(),
-      _verticalSpace(),
-      _verticalSpace(),
-      _verticalSpace(),
-      _verticalSpace(),
-      _texto(),
-      _verticalSpace(),
-      _verticalSpace(),
-      _verticalSpace(),
-      _verticalSpace(),
-      _preparedButton(context),
-
-    ],
+  return Container(
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        _titulo(),
+        _verticalSpace(),
+        _verticalSpace(),
+        _verticalSpace(),
+        _verticalSpace(),
+        _texto(),
+        _verticalSpace(),
+        _verticalSpace(),
+        _verticalSpace(),
+        _verticalSpace(),
+        _preparedButton(context),
+      ],
+    ),
   );
 }
 
 _titulo() {
   return Text(
-      "Como funcionam?",
-      style: TextStyle(
-        fontSize: 30,
-        color: Colors.black,
-        fontWeight: FontWeight.bold,
-        fontStyle: FontStyle.italic,
-        decoration: TextDecoration.underline,
-        decorationColor: Colors.green,
-      ),
-      textAlign: TextAlign.center,
-    );
-
-
-}
-
-_texto(){
-    return Align(
-      alignment: Alignment.topCenter, // Align however you like (i.e .centerRight, centerLeft)
-      child: Text(
-        "Primeiramente adicionamos um valor, que será considerado o nó raiz, e a partir dele temos umas referência"
-            " para os próximos valores",
-        style: TextStyle(
-          fontSize: 30,
-          color: Colors.black,
-          fontWeight: FontWeight.bold,
-          fontStyle: FontStyle.italic,
-          decoration: TextDecoration.underline,
-          decorationColor: Colors.green,
-        ),
-        textAlign: TextAlign.center,
-      ),
-    );
-}
-
-_preparedButton(context){
-  return RaisedButton(
-    child: Text("Próximo!"),
-    onPressed: () => _OnClickPrepared(context)
+    "Como funcionam?",
+    style: TextStyle(
+      fontSize: 30,
+      color: Colors.black,
+      fontWeight: FontWeight.bold,
+      fontStyle: FontStyle.italic,
+    ),
+    textAlign: TextAlign.center,
   );
 }
 
-_OnClickPrepared(BuildContext context){
-  Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){
+_texto() {
+  return Align(
+      alignment: Alignment
+          .topCenter, // Align however you like (i.e .centerRight, centerLeft)
+      child: Padding(
+        padding: EdgeInsets.all(15),
+        child: Text(
+          "Primeiramente adicionamos um valor, que será considerado o nó raiz, e a partir dele temos umas referência"
+          " para os próximos valores",
+          style: TextStyle(
+            fontSize: 30,
+            color: Colors.black,
+            fontWeight: FontWeight.bold,
+            fontStyle: FontStyle.italic,
+          ),
+          textAlign: TextAlign.center,
+        ),
+      ));
+}
+
+_preparedButton(context) {
+  return RaisedButton(
+      child: Text("Próximo!"), onPressed: () => _onClickPrepared(context));
+}
+
+_onClickPrepared(BuildContext context) {
+  Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) {
     return numero_inserido1();
   }));
 }
 
-_verticalSpace(){
-  return Text(
-    " "
+_verticalSpace() {
+  return SizedBox(
+    height: 18,
   );
 }
