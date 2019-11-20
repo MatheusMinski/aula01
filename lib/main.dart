@@ -8,6 +8,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false, // Pra tirar aquela faixa vermelho de debug do canto de cima
       theme: ThemeData(primaryColor: Colors.blue),
       home: homePage(),
     );
