@@ -1,3 +1,4 @@
+import 'package:aula01/pages/the_game.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -85,8 +86,8 @@ _preparedButton(context) {
 }
 
 _onClickPrepared(BuildContext context) {
-  Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) {
-    //return numero_inserido3();
+  Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) {
+    return the_game();
   }));
 }
 

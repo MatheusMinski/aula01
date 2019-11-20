@@ -30,9 +30,7 @@ _body(context) {
         _verticalSpace(),
         _img(),
         _verticalSpace(),
-        _verticalSpace(),
         _preparedButton(context),
-        _needsIntroButton(context),
       ],
     ),
   );
